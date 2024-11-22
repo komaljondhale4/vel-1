@@ -2,7 +2,7 @@ pipeline{
   agent{
     label{
          label 'built-in'
-         customWorkspace '/root/dockerCont/' 
+         customWorkspace '/root/dockerCont1/' 
     }
   }
   stages{
@@ -16,15 +16,15 @@ pipeline{
     }
     stage('create a container'){
        steps{
-         sh "docker run -d -p 80:80 --name contMaster httpd"
+         sh "docker run -d -p 90:80 --name contMaster1 httpd"
          
        }
     }
     
     stage('deploy'){
        steps{
-         sh "docker cp index.html contMaster:/usr/local/apache2/htdocs"
-         sh "docker exec contMaster chmod 755 /usr/local/apache2/htdocs/index.html"
+         sh "docker cp index.html contMaster1:/usr/local/apache2/htdocs"
+         sh "docker exec contMaster1 chmod 755 /usr/local/apache2/htdocs/index.html"
        }
     }
   }
