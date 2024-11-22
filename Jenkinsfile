@@ -2,11 +2,11 @@ pipeline{
   agent{
     label{
          label 'built-in'
-         customWorkspace '/root/dockerCont1/' 
+         customWorkspace '/root/DCont1/' 
     }
   }
   stages{
-    stage('cleaning up existing containers'){
+    stage('clean containers'){
        steps{
             // Stop all running containers
             sh "docker stop \$(docker ps -q)"
@@ -14,17 +14,17 @@ pipeline{
             sh "docker rm \$(docker ps -a -q)"
        }
     }
-    stage('create a container'){
+    stage('create container'){
        steps{
-         sh "docker run -d -p 90:80 --name contMaster1 httpd"
+         sh "docker run -d -p 90:80 --name container1 httpd"
          
        }
     }
     
     stage('deploy'){
        steps{
-         sh "docker cp index.html contMaster1:/usr/local/apache2/htdocs"
-         sh "docker exec contMaster1 chmod 755 /usr/local/apache2/htdocs/index.html"
+         sh "docker cp index.html container1:/usr/local/apache2/htdocs"
+         sh "docker exec container1 chmod 755 /usr/local/apache2/htdocs/index.html"
        }
     }
   }
