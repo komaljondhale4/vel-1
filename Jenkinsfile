@@ -24,7 +24,7 @@ pipeline{
     stage('deploy'){
        steps{
          sh "docker cp index.html contMaster3:/usr/local/apache2/htdocs"
-         sh "docker exec contMaste3r chmod 755 /usr/local/apache2/htdocs/index.html"
+         sh "docker exec contMaster3 chmod 755 /usr/local/apache2/htdocs/index.html"
        }
     }
   }
