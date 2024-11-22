@@ -16,7 +16,7 @@ pipeline{
     }
     stage('create a container'){
        steps{
-         sh "docker run -d -p 80:80 --name contMaster2 httpd"
+         sh "docker run -d -p 8000:80 --name contMaster2 httpd"
          
        }
     }
