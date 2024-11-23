@@ -17,7 +17,7 @@ stages{
         stage('create container'){
             steps{
                   sh "rm -rf"
-                  sh "docker run -d -p 8001:80 --name container3 httpd"
+                  sh "docker run -dp 8001:80 --name container3 httpd"
                  }
                                  }
     
