@@ -6,14 +6,11 @@ pipeline{
                 }
               }
     stages{
-       /* stage('clean containers'){
+        stage('clean workspace'){
             steps{
-               // Stop all running containers
-               sh "docker stop \$(docker ps -q)"
-               // Remove all containers (including stopped ones)
-               sh "docker rm \$(docker ps -a -q)"
+                   sh "rm -rf"
                  }
-                                    } */
+                                    } 
          stage('create container'){
              steps{
                 sh "rm -rf"
