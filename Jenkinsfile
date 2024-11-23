@@ -8,7 +8,7 @@ pipeline{
     stages{
         stage('clean workspace'){
             steps{
-                   sh "rm -rf"
+                   sh "rm -rf /DCont"
                  }
                                     } 
          stage('create container'){
