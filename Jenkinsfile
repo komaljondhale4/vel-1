@@ -16,7 +16,7 @@ pipeline{
                                      } */
            stage('create container'){
                steps{
-                 sh "rm -rf"
+                 sh "docker rm -f container1 || true"
                  sh "docker run -dp 90:80 --name container1 httpd"
                     }
                                     }
