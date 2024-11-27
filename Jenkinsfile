@@ -17,8 +17,8 @@ pipeline{
            stage('create container'){
                steps{
              //    sh "docker rm -f container1 || true"
-                  sh "docker stop container"  
-                  sh "docker rm container"
+                  sh "docker stop container1"  
+                  sh "docker rm container1"
                   sh "docker run -dp 90:80 --name container1 httpd"
                     }
                                     }
