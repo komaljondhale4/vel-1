@@ -22,8 +22,7 @@ pipeline{
          {  
               steps {
                 sh " docker cp index.html container4:/usr/local/apache2/htdocs"
-                sh " docker exec container4 chmod 777 /usr/local/apach2/htdocs/index.html"
-
+                sh "docker exec container4 chmod 755 /usr/local/apache2/htdocs/index.html"
                     }      
          }
  }
