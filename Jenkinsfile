@@ -16,9 +16,9 @@ stages{
                                  }     */
         stage('create container'){
             steps{
-    //            sh "docker rm -f container3 || true"
-                  sh "docker stop container3"  
-                  sh "docker rm container3"
+                sh "docker rm -f container3 || true"
+     //             sh "docker stop container3"  
+      //            sh "docker rm container3"
                   sh "docker run -dp 8001:80 --name container3 httpd"
                  }
                                  }
