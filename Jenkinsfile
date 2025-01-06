@@ -2,7 +2,7 @@ pipeline{
      agent{
              label{
                      label 'built-in'
-                     customeworkspace '/root/DCont4/'
+                     customeWorkspace '/root/DCont4/'
                   }
           }
         
