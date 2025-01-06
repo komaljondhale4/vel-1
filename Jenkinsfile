@@ -5,7 +5,7 @@ pipeline{
                      customeworkspace "/root/DCont4/"
                   }
           }
-        }
+        
  stages{
 
          stage("creat container")
@@ -20,6 +20,7 @@ pipeline{
                 sh " docker cp index.html conatiner4:/usr/local/apache2/htdocs"
                 sh " docker exec container4 chmod -R 777 /usr/local/apach2/htdocs"
          }       
-         
+ }
+}
 
 
