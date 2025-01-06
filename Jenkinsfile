@@ -6,8 +6,8 @@ pipeline{
                 }
               }
     stages{
-       stage('clean workspace'){
-           /* steps{
+      /* stage('clean workspace'){
+            steps{
                    sh "rm -rf /DCont"
                  } 
                                   }  */
