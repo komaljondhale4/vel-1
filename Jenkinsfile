@@ -6,15 +6,16 @@ pipeline{
                 }
               }
     stages{
-       /* stage('clean workspace'){
-            steps{
+       stage('clean workspace'){
+           /* steps{
                    sh "rm -rf /DCont"
                  } 
                                   }  */
          stage('create container'){
              steps{
-                  sh "docker stop container"  
-                  sh "docker rm container" 
+                      sh "docker rm -f container2 || true"
+                 /* sh "docker stop container"  
+                  sh "docker rm container" */
                   sh "docker run -dp 80:80 --name container httpd"
                   }
                                   }
